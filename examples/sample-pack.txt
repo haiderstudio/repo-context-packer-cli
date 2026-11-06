@@ -1,0 +1,40 @@
+# Repo context pack
+# Root: sample-repo
+# Files: 4
+# Lines: 22
+# Note: secrets and build outputs were left out.
+## Files
+src/app.py
+src/util.py
+README.md
+docs/guide.md
+
+==== src/app.py ====
+"""Demo shop: add prices and print a total."""
+
+PRICES = {"bread": 2, "milk": 3}
+
+
+def total(items):
+    return sum(PRICES[item] for item in items)
+
+
+if __name__ == "__main__":
+    print(total(["bread", "milk"]))
+
+==== src/util.py ====
+"""Small helpers for the demo shop."""
+
+
+def greet(name):
+    return "Hello, %s" % name
+
+==== README.md ====
+# demo-shop
+
+A tiny demo shop used to show what repo-context-packer does.
+
+==== docs/guide.md ====
+# Guide
+
+Run the shop with `python3 src/app.py`. It prints 5.
